@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Research Portfolio - Dr. Yiyang Gao</title>
+    <title>Research Portfolio - Yiyang Gao</title>
     <style>
         * {
             margin: 0;
@@ -11,17 +11,25 @@
             box-sizing: border-box;
         }
         
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --text: #333;
+            --light-bg: #f8f9fa;
+            --white: #ffffff;
+        }
+        
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            color: #333;
-            overflow-x: hidden;
-            min-height: 100vh;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--light-bg);
         }
         
         /* Navigation */
         nav {
-            background: rgba(255, 255, 255, 0.95);
+            background: var(--white);
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             position: sticky;
             top: 0;
@@ -45,13 +53,43 @@
         
         .nav-links a {
             text-decoration: none;
-            color: #333;
+            color: var(--text);
             font-weight: 500;
             transition: color 0.3s;
         }
         
         .nav-links a:hover {
-            color: #2a5298;
+            color: var(--secondary);
+        }
+        
+        /* Header - Matching index.html hero style */
+        .portfolio-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        
+        .portfolio-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .portfolio-header .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+        
+        .portfolio-header .identity {
+            font-size: 1.1rem;
+            margin-top: 1rem;
+            padding: 0.75rem 1.5rem;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 30px;
+            display: inline-block;
         }
         
         .container {
@@ -60,34 +98,19 @@
             padding: 40px 20px;
         }
         
-        header {
-            text-align: center;
-            color: white;
-            margin-bottom: 50px;
-            animation: fadeIn 1s ease-out;
+        h2 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 32px;
         }
         
-        h1 {
-            font-size: 48px;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-        
-        .subtitle {
-            font-size: 24px;
-            opacity: 0.9;
-            font-weight: 300;
-        }
-        
-        .identity {
+        h3 {
+            color: var(--secondary);
+            margin: 15px 0 10px;
             font-size: 20px;
-            margin-top: 15px;
-            padding: 10px 20px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 30px;
-            display: inline-block;
         }
         
+        /* Timeline */
         .timeline-container {
             position: relative;
             margin: 50px 0;
@@ -99,7 +122,8 @@
             top: 0;
             bottom: 0;
             width: 3px;
-            background: rgba(255, 255, 255, 0.3);
+            background: var(--secondary);
+            opacity: 0.3;
             transform: translateX(-50%);
         }
         
@@ -120,7 +144,7 @@
             padding: 30px;
             background: white;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             margin: 0 30px;
             position: relative;
             transition: transform 0.3s, box-shadow 0.3s;
@@ -128,14 +152,14 @@
         
         .timeline-content:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
         }
         
         .period-label {
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
-            background: #2a5298;
+            background: var(--secondary);
             color: white;
             padding: 8px 20px;
             border-radius: 20px;
@@ -144,18 +168,7 @@
             white-space: nowrap;
         }
         
-        h2 {
-            color: #2a5298;
-            margin-bottom: 20px;
-            font-size: 32px;
-        }
-        
-        h3 {
-            color: #1e3c72;
-            margin: 15px 0 10px;
-            font-size: 20px;
-        }
-        
+        /* Research items */
         .research-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -164,10 +177,10 @@
         }
         
         .research-item {
-            background: #f0f4f8;
+            background: var(--light-bg);
             padding: 15px;
             border-radius: 10px;
-            border-left: 4px solid #2a5298;
+            border-left: 4px solid var(--secondary);
             transition: all 0.3s;
         }
         
@@ -178,7 +191,7 @@
         
         .method-tag {
             display: inline-block;
-            background: #2a5298;
+            background: var(--secondary);
             color: white;
             padding: 5px 12px;
             border-radius: 15px;
@@ -187,18 +200,15 @@
         }
         
         .maihda-tag {
-            background: #e74c3c;
-        }
-        
-        .future-tag {
-            background: #27ae60;
+            background: var(--accent);
         }
         
         .connections {
             margin: 40px 0;
             padding: 30px;
-            background: rgba(255, 255, 255, 0.95);
+            background: white;
             border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
             text-align: center;
         }
         
@@ -211,7 +221,7 @@
         }
         
         .flow-item {
-            background: #f0f4f8;
+            background: var(--light-bg);
             padding: 20px;
             border-radius: 10px;
             margin: 10px;
@@ -220,12 +230,16 @@
             position: relative;
         }
         
+        .flow-item h4 {
+            color: var(--secondary);
+        }
+        
         .flow-arrow {
             position: absolute;
             right: -25px;
             top: 50%;
             transform: translateY(-50%);
-            color: #2a5298;
+            color: var(--secondary);
             font-size: 24px;
         }
         
@@ -257,13 +271,19 @@
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
         }
         
+        /* Future Vision - Updated to white background */
         .future-vision {
-            background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
-            color: white;
+            background: white;
+            color: var(--text);
             padding: 40px;
             border-radius: 15px;
             margin-top: 40px;
             text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        
+        .future-vision h2 {
+            color: var(--primary);
         }
         
         .vision-items {
@@ -274,12 +294,16 @@
         }
         
         .vision-item {
-            background: rgba(255, 255, 255, 0.15);
+            background: var(--light-bg);
             padding: 20px;
             border-radius: 10px;
             margin: 10px;
             flex: 1;
             min-width: 200px;
+        }
+        
+        .vision-item h3 {
+            color: var(--secondary);
         }
         
         @keyframes fadeIn {
@@ -297,6 +321,7 @@
             padding: 2px 6px;
             border-radius: 3px;
             font-weight: bold;
+            color: #333;
         }
         
         .grant-box {
@@ -317,7 +342,7 @@
         
         /* Footer */
         footer {
-            background: rgba(0, 0, 0, 0.1);
+            background: var(--primary);
             color: white;
             text-align: center;
             padding: 2rem;
@@ -330,11 +355,11 @@
                 display: none;
             }
             
-            h1 {
+            .portfolio-header h1 {
                 font-size: 2rem;
             }
             
-            .subtitle {
+            .portfolio-header .subtitle {
                 font-size: 1.2rem;
             }
             
@@ -362,7 +387,7 @@
     <nav>
         <div class="nav-container">
             <div class="logo">
-                <strong>Dr. Yiyang Gao</strong>
+                <strong>Yiyang Gao</strong>
             </div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
@@ -371,18 +396,22 @@
                 <li><a href="publications.html">Publications</a></li>
                 <li><a href="cv.html">CV</a></li>
                 <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="research.html">Projects</a></li>
                 <li><a href="index.html#contact">Contact</a></li>
             </ul>
         </div>
     </nav>
 
-    <div class="container">
-        <header>
+    <!-- Header -->
+    <header class="portfolio-header">
+        <div class="container">
             <h1>Research Journey: Dr Yiyang Gao</h1>
             <p class="subtitle">From Educational Segregation to Computational Health Geography</p>
             <p class="identity">🎯 Identity: Computational Social Scientist | Population Geographer | AI for Social Good</p>
-        </header>
-        
+        </div>
+    </header>
+
+    <div class="container">
         <div class="timeline-container">
             <div class="timeline-line"></div>
             
