@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Projects - Dr. Yiyang Gao</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --text: #333;
+            --light-bg: #f8f9fa;
+            --white: #ffffff;
+            --success: #27ae60;
+            --warning: #f39c12;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--light-bg);
+        }
+        
+        /* Navigation */
+        nav {
+            background: var(--white);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+        
+        /* Header */
+        .page-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        /* Research Overview */
+        .research-overview {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            margin: 3rem 0;
+        }
+        
+        .research-overview h2 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Project Cards */
+        .project-section {
+            margin: 3rem 0;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 2rem;
+            text-align: center;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid var(--secondary);
+        }
+        
+        .project-card {
+            background: var(--white);
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1.5rem;
+        }
+        
+        .project-title {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .project-status {
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        
+        .status-active {
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        .status-pending {
+            background: #fff3cd;
+            color: #856404;
+        }
+        
+        .status-completed {
+            background: #cce5ff;
+            color: #004085;
+        }
+        
+        .project-meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: var(--light-bg);
+            border-radius: 8px;
+        }
+        
+        .meta-item {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .meta-label {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .meta-value {
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        .project-description {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+        
+        .project-objectives {
+            margin-bottom: 1.5rem;
+        }
+        
+        .project-objectives h4 {
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .project-objectives ul {
+            margin-left: 1.5rem;
+        }
+        
+        .project-objectives li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .method-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        
+        .method-tag {
+            background: var(--secondary);
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        
+        /* MAIHDA Section */
+        .maihda-focus {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 3rem;
+            border-radius: 10px;
+            margin: 3rem 0;
+        }
+        
+        .maihda-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .maihda-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .maihda-card:hover {
+            transform: translateY(-3px);
+        }
+        
+        .maihda-card h3 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">
+                <strong>Dr. Yiyang Gao</strong>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="cv.html">CV</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <h1>Research Projects</h1>
+        <p>From Educational Segregation to Computational Health Geography</p>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Research Overview -->
+        <div class="research-overview">
+            <h2>Research Philosophy</h2>
+            <p>
+                My research journey represents an evolution from methodological expertise to purposeful application. 
+                Starting with educational segregation analysis, I discovered that <strong>spatial accessibility</strong> 
+                is the common thread connecting education, transport, environment, and health inequalities. 
+                This realization drives my current focus on computational health geography, where I develop 
+                innovative methods to understand how place, identity, and social outcomes intersect.
+            </p>
+            <p style="margin-top: 1rem;">
+                <strong>Core Mission:</strong> Using advanced computational methods and AI/ML to reveal and address 
+                spatial inequalities, with particular focus on intersectional analysis through MAIHDA 
+                (Multilevel Analysis of Individual Heterogeneity and Discriminatory Accuracy).
+            </p>
+        </div>
+
+        <!-- Current Projects -->
+        <section class="project-section">
+            <h2 class="section-title">Current Projects</h2>
+            
+            <div class="project-card">
+                <div class="project-header">
+                    <div>
+                        <h3 class="project-title">Refining MAIHDA for Quantitative Social Science</h3>
+                    </div>
+                    <span class="project-status status-active">Active</span>
+                </div>
+                
+                <div class="project-meta">
+                    <div class="meta-item">
+                        <span class="meta-label">Funder</span>
+                        <span class="meta-value">ESRC</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Role</span>
+                        <span class="meta-value">Research Fellow</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Duration</span>
+                        <span class="meta-value">2025-2026</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Institution</span>
+                        <span class="meta-value">University of Sheffield</span>
+                    </div>
+                </div>
+                
+                <div class="project-description">
+                    <p>
+                        Leading methodological innovations to extend MAIHDA beyond health inequalities into 
+                        broader social science domains. This project develops cutting-edge extensions including 
+                        causal inference integration, machine learning enhancements, and spatial applications.
+                    </p>
+                </div>
+                
+                <div class="project-objectives">
+                    <h4>Key Objectives:</h4>
+                    <ul>
+                        <li>Develop Causal-MAIHDA combining with DID, RDD, and IV methods</li>
+                        <li>Create ML-MAIHDA for automated feature discovery</li>
+                        <li>Implement Spatial-MAIHDA with geographic random effects</li>
+                        <li>Build computational tools and R packages for wider adoption</li>
+                        <li>Apply to education, environment, and care inequalities</li>
+                    </ul>
+                </div>
+                
+                <div class="method-tags">
+                    <span class="method-tag">Multilevel Modeling</span>
+                    <span class="method-tag">Machine Learning</span>
+                    <span class="method-tag">Causal Inference</span>
+                    <span class="method-tag">Spatial Analysis</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div>
+                        <h3 class="project-title">Ethnic Minority Teacher Recruitment & Retention</h3>
+                    </div>
+                    <span class="project-status status-active">Active</span>
+                </div>
+                
+                <div class="project-meta">
+                    <div class="meta-item">
+                        <span class="meta-label">Funder</span>
+                        <span class="meta-value">ESRC</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Role</span>
+                        <span class="meta-value">Postdoctoral Fellow</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Duration</span>
+                        <span class="meta-value">2023-2025</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Grant</span>
+                        <span class="meta-value">ES/X00208X/1</span>
+                    </div>
+                </div>
+                
+                <div class="project-description">
+                    <p>
+                        Investigating ethnic disparities in teacher careers using large-scale administrative data 
+                        and mixed methods. Led national survey of 3,000 teachers and analyzed School Workforce 
+                        Census data covering all public school teachers in England (2010-2022).
+                    </p>
+                </div>
+                
+                <div class="project-objectives">
+                    <h4>Key Achievements:</h4>
+                    <ul>
+                        <li>Published 8 collaborative papers in top education journals</li>
+                        <li>Conducted systematic reviews of 30,000+ sources</li>
+                        <li>Led 33 qualitative interviews with teachers and school leaders</li>
+                        <li>Developed policy recommendations for improving diversity</li>
+                    </ul>
+                </div>
+                
+                <div class="method-tags">
+                    <span class="method-tag">Survival Analysis</span>
+                    <span class="method-tag">Mixed Methods</span>
+                    <span class="method-tag">Large Admin Data</span>
+                    <span class="method-tag">Survey Design</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- MAIHDA Innovation -->
+        <div class="maihda-focus">
+            <h2 class="section-title" style="border-color: var(--accent);">MAIHDA Innovation Agenda</h2>
+            <p style="text-align: center; margin-bottom: 2rem;">
+                Developing next-generation intersectionality methods for social science
+            </p>
+            
+            <div class="maihda-grid">
+                <div class="maihda-card">
+                    <h3>Causal-MAIHDA</h3>
+                    <p>
+                        Integrating causal inference methods (DID, RDD, IV) with MAIHDA to move from 
+                        description to causation in intersectional analysis.
+                    </p>
+                </div>
+                
+                <div class="maihda-card">
+                    <h3>ML-MAIHDA</h3>
+                    <p>
+                        Using machine learning for automated feature discovery and ensemble methods to 
+                        uncover hidden intersectional patterns.
+                    </p>
+                </div>
+                
+                <div class="maihda-card">
+                    <h3>Spatial-MAIHDA</h3>
+                    <p>
+                        Incorporating geographic random effects to understand how place modifies the 
+                        impact of intersectional identities.
+                    </p>
+                </div>
+                
+                <div class="maihda-card">
+                    <h3>LLM-MAIHDA</h3>
+                    <p>
+                        Leveraging large language models for narrative generation and discovering new 
+                        intersectional categories from text data.
+                    </p>
+                </div>
+                
+                <div class="maihda-card">
+                    <h3>Real-time MAIHDA</h3>
+                    <p>
+                        Developing streaming data applications for continuous monitoring of intersectional 
+                        inequalities in real-time.
+                    </p>
+                </div>
+                
+                <div class="maihda-card">
+                    <h3>Open Tools</h3>
+                    <p>
+                        Creating R packages and interactive web applications to democratize MAIHDA methods 
+                        for researchers worldwide.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Completed Projects -->
+        <section class="project-section">
+            <h2 class="section-title">Completed Research</h2>
+            
+            <div class="project-card">
+                <div class="project-header">
+                    <div>
+                        <h3 class="project-title">PhD Thesis: Ethnic School Segregation in England</h3>
+                    </div>
+                    <span class="project-status status-completed">Completed 2023</span>
+                </div>
+                
+                <div class="project-description">
+                    <p>
+                        Developed novel multi-group, multi-scale analytical frameworks to understand ethnic 
+                        segregation patterns in English schools over 20 years. This work challenged prevailing 
+                        assumptions about increasing segregation, revealing overall declines in both residential 
+                        and school segregation with significant regional variations.
+                    </p>
+                </div>
+                
+                <div class="project-objectives">
+                    <h4>Key Contributions:</h4>
+                    <ul>
+                        <li>Created entropy-based multi-group segregation measures</li>
+                        <li>Identified London's unique pattern of low school-residence segregation correlation</li>
+                        <li>Published in Population, Space and Place (JCR Q1)</li>
+                        <li>Established foundation for accessibility-focused research</li>
+                    </ul>
+                </div>
+                
+                <div class="method-tags">
+                    <span class="method-tag">Multilevel Models</span>
+                    <span class="method-tag">Decomposition Analysis</span>
+                    <span class="method-tag">Spatial Analysis</span>
+                    <span class="method-tag">20-year Longitudinal</span>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Dr. Yiyang Gao. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
