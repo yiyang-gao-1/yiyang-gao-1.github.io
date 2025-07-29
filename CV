@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Dr. Yiyang Gao</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --text: #333;
+            --light-bg: #f8f9fa;
+            --white: #ffffff;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--light-bg);
+        }
+        
+        /* Navigation */
+        nav {
+            background: var(--white);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+        
+        /* Header */
+        .cv-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        
+        .cv-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .cv-header .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+        
+        .cv-header .contact-info span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        /* Main Content */
+        .cv-container {
+            max-width: 900px;
+            margin: 2rem auto;
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        
+        /* Download Button */
+        .download-btn {
+            display: inline-block;
+            margin-bottom: 2rem;
+            padding: 0.75rem 1.5rem;
+            background: var(--secondary);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        
+        .download-btn:hover {
+            background: #2980b9;
+        }
+        
+        /* CV Sections */
+        .cv-section {
+            margin-bottom: 3rem;
+        }
+        
+        .cv-section h2 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--secondary);
+        }
+        
+        .cv-section h3 {
+            color: var(--secondary);
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Experience Items */
+        .cv-item {
+            margin-bottom: 2rem;
+            padding-left: 1rem;
+            border-left: 3px solid var(--light-bg);
+        }
+        
+        .cv-item:hover {
+            border-left-color: var(--secondary);
+        }
+        
+        .cv-item .date {
+            color: #666;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .cv-item .title {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.3rem;
+        }
+        
+        .cv-item .institution {
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .cv-item ul {
+            margin-top: 0.5rem;
+            margin-left: 1.5rem;
+        }
+        
+        .cv-item li {
+            margin-bottom: 0.3rem;
+        }
+        
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+        
+        .skill-category h4 {
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .skill-tag {
+            background: var(--light-bg);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        
+        /* Grants Table */
+        .grants-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        
+        .grants-table th, .grants-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--light-bg);
+        }
+        
+        .grants-table th {
+            background: var(--light-bg);
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">
+                <strong>Dr. Yiyang Gao</strong>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#research">Research</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="cv.html">CV</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- CV Header -->
+    <header class="cv-header">
+        <h1>Dr. Yiyang Gao</h1>
+        <p>Computational Social Scientist | Population Geographer</p>
+        <div class="contact-info">
+            <span>📧 stnvyga@ucl.ac.uk</span>
+        </div>
+    </header>
+
+    <!-- Main CV Content -->
+    <div class="cv-container">
+        <a href="YiyangGao_CV.pdf" class="download-btn">📄 Download PDF Version</a>
+
+        <!-- Education -->
+        <section class="cv-section">
+            <h2>Education</h2>
+            
+            <div class="cv-item">
+                <div class="date">2018 - 2023</div>
+                <div class="title">PhD in Advanced Quantitative Methods (Sociology)</div>
+                <div class="institution">University of Exeter, Centre for Computational Social Science</div>
+                <ul>
+                    <li>Thesis: "Ethnic School Segregation in England"</li>
+                    <li>Supervisors: Prof. Alexey Bessudnov, Dr. Chris Playford</li>
+                    <li>Developed novel multi-group, multi-scale analytical frameworks</li>
+                </ul>
+            </div>
+
+            <div class="cv-item">
+                <div class="date">2016 - 2017</div>
+                <div class="title">MSc in Quantitative Research Methods</div>
+                <div class="institution">University College London (UCL)</div>
+                <ul>
+                    <li>Distinction in quantitative social science methods</li>
+                </ul>
+            </div>
+
+            <div class="cv-item">
+                <div class="date">2012 - 2016</div>
+                <div class="title">BA in Sociology (First Class Honours)</div>
+                <div class="institution">Shandong University, China</div>
+            </div>
+        </section>
+
+        <!-- Employment -->
+        <section class="cv-section">
+            <h2>Academic Positions</h2>
+            
+            <div class="cv-item">
+                <div class="date">August 2025 - August 2026</div>
+                <div class="title">Quantitative Social Science Researcher</div>
+                <div class="institution">University of Sheffield, Sheffield Methods Institute</div>
+                <ul>
+                    <li>ESRC-funded project on MAIHDA methodological development</li>
+                    <li>Leading innovations in intersectionality analysis</li>
+                </ul>
+            </div>
+
+            <div class="cv-item">
+                <div class="date">June 2023 - November 2025</div>
+                <div class="title">Postdoctoral Research Fellow</div>
+                <div class="institution">Durham University, Evidence Centre for Education</div>
+                <ul>
+                    <li>ESRC project on ethnic minority teacher recruitment and retention</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Teaching Experience -->
+        <section class="cv-section">
+            <h2>Teaching Experience</h2>
+            
+            <div class="cv-item">
+                <div class="date">2023 - Present</div>
+                <div class="title">Module Leader</div>
+                <div class="institution">Durham University</div>
+                <ul>
+                    <li>Secondary Data Analysis in Educational Research (Masters level)</li>
+                    <li>Teaching major datasets: NPD, PISA, TALIS, TIMSS, PIRLS</li>
+                    <li>SPSS and Excel quantitative analysis support</li>
+                </ul>
+            </div>
+
+            <div class="cv-item">
+                <div class="date">2020 - 2022</div>
+                <div class="title">Graduate Teaching Assistant</div>
+                <div class="institution">University of Exeter</div>
+                <ul>
+                    <li>Social Science Data Analysis II & III (R programming)</li>
+                    <li>Statistical methods and data visualization</li>
+                    <li>Git, GitHub, and reproducible research</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section class="cv-section">
+            <h2>Technical Skills</h2>
+            
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>Programming & Software</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">R (Advanced)</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">QGIS</span>
+                        <span class="skill-tag">GeoDa</span>
+                        <span class="skill-tag">MLwiN</span>
+                        <span class="skill-tag">Git/GitHub</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h4>Statistical Methods</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Multilevel Modeling</span>
+                        <span class="skill-tag">Spatial Analysis</span>
+                        <span class="skill-tag">Decomposition Analysis</span>
+                        <span class="skill-tag">Survival Analysis</span>
+                        <span class="skill-tag">Causal Inference</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h4>Data Management</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">ONS Secure Research</span>
+                        <span class="skill-tag">UK Data Service</span>
+                        <span class="skill-tag">Large Admin Data</span>
+                        <span class="skill-tag">Survey Design</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h4>Languages</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Mandarin (Native)</span>
+                        <span class="skill-tag">English (Professional)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Professional Service -->
+        <section class="cv-section">
+            <h2>Professional Memberships & Certifications</h2>
+            
+            <ul>
+                <li>ONS Accredited Researcher (2019 - Present)</li>
+                <li>UK Data Service Secure Lab Accredited Researcher (2022 - Present)</li>
+                <li>British Society for Population Studies (BSPS) Member (2022 - Present)</li>
+                <li>Conference Organizer: BSPS 2025 - "Advancing Spatial Microsimulation and Agent-Based Modeling in Population Research"</li>
+            </ul>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Dr. Yiyang Gao. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
