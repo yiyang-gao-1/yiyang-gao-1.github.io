@@ -255,7 +255,7 @@
 
     <!-- Main CV Content -->
     <div class="cv-container">
-        <a href="YiyangGao_CV.pdf" class="download-btn">📄 Download PDF Version</a>
+        <a href="Yiyang Gao_CV_202508.pdf" class="download-btn">📄 Download PDF Version</a>
 
         <!-- Education -->
         <section class="cv-section">
@@ -395,7 +395,7 @@
                 <li>ONS Accredited Researcher (2019 - Present)</li>
                 <li>UK Data Service Secure Lab Accredited Researcher (2022 - Present)</li>
                 <li>British Society for Population Studies (BSPS) Member (2022 - Present)</li>
-                <li>Conference Organizer: BSPS 2025 - "Advancing Spatial Microsimulation and Agent-Based Modeling in Population Research"</li>
+                <li>Conference Organiser: BSPS 2025 - "Advancing Spatial Microsimulation and Agent-Based Modelling in Population Research"</li>
             </ul>
         </section>
     </div>
