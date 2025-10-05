@@ -1,409 +1,403 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV - Dr. Yiyang Gao</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        :root {
-            --primary: #2c3e50;
-            --secondary: #3498db;
-            --accent: #e74c3c;
-            --text: #333;
-            --light-bg: #f8f9fa;
-            --white: #ffffff;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.6;
-            color: var(--text);
-            background: var(--light-bg);
-        }
-        
-        /* Navigation */
-        nav {
-            background: var(--white);
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        
-        nav .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-        
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text);
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        .nav-links a:hover {
-            color: var(--secondary);
-        }
-        
-        /* Header */
-        .cv-header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 3rem 2rem;
-            text-align: center;
-        }
-        
-        .cv-header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .cv-header .contact-info {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-            margin-top: 1rem;
-        }
-        
-        .cv-header .contact-info span {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        /* Main Content */
-        .cv-container {
-            max-width: 900px;
-            margin: 2rem auto;
-            background: var(--white);
-            padding: 3rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-        }
-        
-        /* Download Button */
-        .download-btn {
-            display: inline-block;
-            margin-bottom: 2rem;
-            padding: 0.75rem 1.5rem;
-            background: var(--secondary);
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background 0.3s;
-        }
-        
-        .download-btn:hover {
-            background: #2980b9;
-        }
-        
-        /* CV Sections */
-        .cv-section {
-            margin-bottom: 3rem;
-        }
-        
-        .cv-section h2 {
-            color: var(--primary);
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--secondary);
-        }
-        
-        .cv-section h3 {
-            color: var(--secondary);
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        /* Experience Items */
-        .cv-item {
-            margin-bottom: 2rem;
-            padding-left: 1rem;
-            border-left: 3px solid var(--light-bg);
-        }
-        
-        .cv-item:hover {
-            border-left-color: var(--secondary);
-        }
-        
-        .cv-item .date {
-            color: #666;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-        
-        .cv-item .title {
-            font-weight: 600;
-            color: var(--primary);
-            margin-bottom: 0.3rem;
-        }
-        
-        .cv-item .institution {
-            color: var(--secondary);
-            margin-bottom: 0.5rem;
-        }
-        
-        .cv-item ul {
-            margin-top: 0.5rem;
-            margin-left: 1.5rem;
-        }
-        
-        .cv-item li {
-            margin-bottom: 0.3rem;
-        }
-        
-        /* Skills Grid */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 1rem;
-        }
-        
-        .skill-category h4 {
-            color: var(--secondary);
-            margin-bottom: 0.5rem;
-        }
-        
-        .skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-        
-        .skill-tag {
-            background: var(--light-bg);
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-        }
-        
-        /* Grants Table */
-        .grants-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 1rem;
-        }
-        
-        .grants-table th, .grants-table td {
-            padding: 1rem;
-            text-align: left;
-            border-bottom: 1px solid var(--light-bg);
-        }
-        
-        .grants-table th {
-            background: var(--light-bg);
-            font-weight: 600;
-            color: var(--primary);
-        }
-        
-        /* Footer */
-        footer {
-            background: var(--primary);
-            color: white;
-            text-align: center;
-            padding: 2rem;
-            margin-top: 4rem;
-        }
-    </style>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Curriculum Vitae — Dr. Yiyang Gao</title>
+  <style>
+    :root{
+      --purple:#660099;  /* Sheffield purple */
+      --gold:#FFCC33;
+      --grey:#999999;
+      --text:#222;
+      --bg:#f6f6f8;
+      --white:#fff;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;line-height:1.6;color:var(--text);background:var(--bg)}
+    a{color:var(--purple);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:1100px;margin:0 auto;padding:2rem 1rem}
+
+    /* Hero / title */
+    .hero{background:linear-gradient(135deg,#7a33b0 0%, #660099 100%);color:#fff;padding:3.2rem 1rem;text-align:center}
+    .hero h1{font-size:2.4rem;font-weight:800;letter-spacing:.2px}
+    .hero p{opacity:.95;margin-top:.4rem}
+
+    /* Toggle + PDF toolbar */
+    .top-controls{display:flex;justify-content:center;gap:.6rem;margin-top:1rem;flex-wrap:wrap}
+    .toggle-btn,.tool-btn{
+      border:2px solid rgba(255,255,255,.7);
+      background:transparent;color:#fff;padding:.5rem .9rem;border-radius:999px;cursor:pointer;font-weight:600
+    }
+    .toggle-btn.active{background:#fff;color:#660099;border-color:#fff}
+    .tool-btn:hover{background:rgba(255,255,255,.12)}
+    .tool-btn.secondary{border-color:#fff;background:#ffffff1a}
+
+    /* CV cards */
+    .cv{margin-top:1.8rem}
+    .card{background:var(--white);border-radius:14px;box-shadow:0 8px 24px rgba(0,0,0,.06);padding:1.25rem 1.25rem;margin-bottom:1rem}
+    .grid-2{display:grid;grid-template-columns:2.2fr 1fr;gap:1rem}
+    .h2{font-size:1.25rem;color:var(--purple);font-weight:800;margin-bottom:.4rem}
+    .h3{font-size:1.05rem;color:#333;font-weight:700;margin:.6rem 0 .3rem}
+    .muted{color:#666}
+    .pill{display:inline-block;background:#f0e6ff;border:1px solid #e6d8ff;border-radius:999px;padding:.18rem .55rem;font-size:.8rem;margin:.15rem .25rem 0 0}
+    .badge{display:inline-block;background:var(--gold);color:#000;border-radius:.4rem;font-size:.72rem;padding:.15rem .4rem;margin-left:.35rem}
+    ul{padding-left:1rem}
+    li{margin:.28rem 0}
+    .kpi{display:flex;flex-wrap:wrap;gap:.75rem;margin:.45rem 0 .2rem}
+    .kpi .chip{background:#fff7cc;border:1px solid #ffe37a;border-radius:.5rem;padding:.25rem .5rem;font-size:.82rem}
+
+    /* Two CVs */
+    #cv-academic, #cv-executive{display:none}
+    #cv-academic.active, #cv-executive.active{display:block}
+
+    /* Note */
+    .note{color:#666;font-size:.9rem;text-align:center;margin:1rem 0}
+
+    /* Print-friendly PREVIEW on screen (optional) */
+    .print-clean body,
+    .print-clean{background:#fff !important}
+    .print-clean .hero{background:#fff !important;color:#000 !important;border-bottom:1px solid #e5e5e5}
+    .print-clean .hero h1{color:#000}
+    .print-clean .hero p{color:#000;opacity:1}
+    .print-clean .toggle-btn,
+    .print-clean .tool-btn{border-color:#000;color:#000;background:#fff}
+    .print-clean .toggle-btn.active{border-color:#000;background:#000;color:#fff}
+    .print-clean .card{box-shadow:none;border:1px solid #e5e5e5}
+    .print-clean .h2{color:#000}
+    .print-clean a{color:#000;text-decoration:underline}
+
+    /* Print CSS */
+    @media print{
+      @page{ size:A4; margin:12mm }
+      body{background:#fff !important;color:#000 !important}
+      [data-include="header"], [data-include="footer"], .top-controls, .note{display:none !important}
+      .hero{background:#fff !important;color:#000 !important;border-bottom:1px solid #e5e5e5;padding:0 0 8px 0}
+      .hero .container{padding:0}
+      .hero h1{font-size:20pt;margin:.2rem 0}
+      .hero p{font-size:11pt;color:#000;opacity:1}
+      .container{padding:0}
+      .card{box-shadow:none;border:1px solid #e5e5e5;page-break-inside:avoid}
+      .h2{color:#000}
+      a{color:#000;text-decoration:underline}
+      /* 仅打印当前激活的 CV（Academic 或 Executive） */
+      #cv-academic:not(.active), #cv-executive:not(.active){display:none !important}
+    }
+
+    /* Small */
+    @media (max-width: 820px){
+      .grid-2{grid-template-columns:1fr}
+    }
+  </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="container">
-            <div class="logo">
-                <strong>Yiyang Gao</strong>
-            </div>
-            <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="index.html#about">About</a></li>
-    <li><a href="index.html#research">Research</a></li>
-    <li><a href="publications.html">Publications</a></li>
-    <li><a href="cv.html">CV</a></li>
-    <li><a href="portfolio.html">Portfolio</a></li>
-    <li><a href="research.html">Projects</a></li>
-    <li><a href="index.html#contact">Contact</a></li>
-</ul>
+
+  <!-- Shared header -->
+  <div data-include="header"></div>
+
+  <!-- Title / Toggle + Tools -->
+  <section class="hero">
+    <div class="container">
+      <h1>Curriculum Vitae — Dr. Yiyang Gao</h1>
+      <p>Quantitative Population Geographer & Social Epidemiologist · MAIHDA · Causal & Spatial Methods · Public Health Intelligence</p>
+      <div class="top-controls">
+        <!-- View toggle -->
+        <button id="btn-academic" class="toggle-btn active" aria-pressed="true">Academic CV</button>
+        <button id="btn-executive" class="toggle-btn" aria-pressed="false">Executive CV</button>
+
+        <!-- Tools -->
+        <button id="btn-print" class="tool-btn" title="Download PDF">🖨️ Download PDF</button>
+        <button id="btn-preview" class="tool-btn secondary" title="Preview print-friendly">👁️ Print-friendly preview</button>
+      </div>
+    </div>
+  </section>
+
+  <main class="container cv">
+
+    <!-- ============ Academic CV ============ -->
+    <div id="cv-academic" class="active">
+
+      <!-- Header / Contacts -->
+      <section class="card grid-2">
+        <div>
+          <div class="h2">Profile</div>
+          <p class="muted">
+            Quantitative sociologist / population geographer specialising in intersectional inequalities and educational–health linkages. 
+            Methodological focus on <b>MAIHDA</b> (random intercepts/slopes), <b>causal inference</b> (DiD/RDD/IV, causal forests), 
+            <b>spatial statistics</b> (CAR), and <b>simulation</b> (ABM). Experienced with large administrative data via ONS SRS, 
+            and committed to reproducible public health intelligence and capacity building.
+          </p>
+          <div class="kpi">
+            <span class="chip">ONS Accredited Researcher</span>
+            <span class="chip">FRGS (Population Data Science)</span>
+            <span class="chip">UKDS Secure Lab Accredited</span>
+          </div>
         </div>
-    </nav>
-
-    <!-- CV Header -->
-    <header class="cv-header">
-        <h1>Dr. Yiyang Gao</h1>
-        <p>Computational Social Scientist | Population Geographer</p>
-        <div class="contact-info">
-            <span>📧 stnvyga@ucl.ac.uk</span>
+        <div>
+          <div class="h2">Contact</div>
+          <ul class="muted" style="list-style:none;padding-left:0">
+            <li>Email: <a href="mailto:y.gao@sheffield.ac.uk">y.gao@sheffield.ac.uk</a></li>
+            <li>ORCID: <a href="https://orcid.org/0000-0003-0421-7760" target="_blank" rel="noopener">0000-0003-0421-7760</a></li>
+            <li>Scholar: <a href="https://scholar.google.com/citations?user=BfD_J6gAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a></li>
+            <li>GitHub: <a href="https://github.com/yiyang-gao-1" target="_blank" rel="noopener">yiyang-gao-1</a></li>
+            <li>Website: <a href="https://yiyang-gao-1.github.io/" target="_blank" rel="noopener">yiyang-gao-1.github.io</a></li>
+            <li>Right to work: Skilled Worker Visa (to 20 Nov 2027); ILR planned Jul 2026</li>
+          </ul>
         </div>
-    </header>
+      </section>
 
-    <!-- Main CV Content -->
-    <div class="cv-container">
-        <a href="Yiyang Gao_CV_202508.pdf" class="download-btn">📄 Download PDF Version</a>
+      <!-- Education -->
+      <section class="card">
+        <div class="h2">Education</div>
+        <ul>
+          <li><b>PhD, Advanced Quantitative Methods</b>, University of Exeter — Thesis: <i>Ethnic School Segregation in England</i>. Multi-group multi-scale framework (entropy + decomposition); multilevel models across geographies. Supervisors: Prof Alexey Bessudnov, Dr Chris Playford.</li>
+          <li><b>MSc, Quantitative Research Methods</b>, University College London — Thesis on autonomous admissions in Chinese universities using DiD + PSM; longitudinal panel analysis.</li>
+          <li><b>BSc Sociology</b>, Shandong University — GPA 91.44/100, 1st in cohort.</li>
+        </ul>
+      </section>
 
-        <!-- Education -->
-        <section class="cv-section">
-            <h2>Education</h2>
-            
-            <div class="cv-item">
-                <div class="date">2018 - 2023</div>
-                <div class="title">PhD in Advanced Quantitative Methods (Sociology)</div>
-                <div class="institution">University of Exeter, Centre for Computational Social Science</div>
-                <ul>
-                    <li>Thesis: "Ethnic School Segregation in England"</li>
-                    <li>Supervisors: Prof. Alexey Bessudnov, Dr. Chris Playford</li>
-                    <li>Developed novel multi-group, multi-scale analytical frameworks</li>
-                </ul>
-            </div>
+      <!-- Appointments -->
+      <section class="card">
+        <div class="h2">Professional Appointments</div>
 
-            <div class="cv-item">
-                <div class="date">2016 - 2017</div>
-                <div class="title">MSc in Quantitative Research Methods</div>
-                <div class="institution">University College London (UCL)</div>
-            </div>
+        <div class="h3">Research Associate in Quantitative Social Science (ESRC MAIHDA Project), University of Sheffield — 2023–present</div>
+        <ul>
+          <li>Lead four strands: <b>Causal-MAIHDA</b> (RCT/DiD with causal forests), <b>Sample size rules</b>, <b>Poisson MAIHDA</b> for rare outcomes, <b>Spatial-MAIHDA</b> (CAR random effects).</li>
+          <li>Analyse Understanding Society, ACIC health data, and administrative records to inform intersectional health intelligence; translate for mixed audiences.</li>
+          <li>Co-ordinated two major grants: Nuffield RDA on transport–education equity with ABM (~£396k) and ESRC Responsive Mode on graduate spatial mobility (~£347k); assembled multi-institution teams and advisory board.</li>
+          <li>Built reproducible infrastructure: <b>maihdaR</b> package, automated R Markdown pipelines, and project websites; delivered MAIHDA workshops for non-statistical audiences.</li>
+          <li>Stakeholder engagement with EEF, ONS, TfL, local authorities; planned annual targets and delivered policy-facing outputs.</li>
+        </ul>
 
-            <div class="cv-item">
-                <div class="date">2012 - 2016</div>
-                <div class="title">BSc in Sociology (First Class Honours)</div>
-                <div class="institution">Shandong University, China</div>
-            </div>
-        </section>
+        <div class="h3">Postdoctoral Research Associate, Evidence Centre for Education, Durham University — 2023–2025</div>
+        <ul>
+          <li>Led multi-cohort <b>survival analysis</b> of teacher retention using SRS School Workforce Census (10M+ records); integrated 33 NVivo-coded interviews and national survey (≈3,000 completes).</li>
+          <li>Standardised version-controlled pipelines; authored briefings; organised policy events (Festival of Social Science session with regional director).</li>
+          <li>Diagnosed/triaged official extract anomalies, coordinated corrected re-issue with DfE, documented robust cleaning pipeline.</li>
+        </ul>
 
-        <!-- Employment -->
-        <section class="cv-section">
-            <h2>Academic Positions</h2>
-            
-            <div class="cv-item">
-                <div class="date">August 2025 - August 2026</div>
-                <div class="title">Quantitative Social Science Researcher</div>
-                <div class="institution">University of Sheffield, Sheffield Methods Institute</div>
-                <ul>
-                    <li>ESRC-funded project on MAIHDA methodological development</li>
-                    <li>Leading innovations in intersectionality analysis</li>
-                </ul>
-            </div>
+        <div class="h3">Postgraduate Teaching Assistant (part-time), University of Exeter — 2020–2022</div>
+        <ul>
+          <li>Designed R Bootcamp; labs for Social Science Data Analysis I/II/III; one-to-one thesis support; GitHub-based reproducible materials.</li>
+        </ul>
+      </section>
 
-            <div class="cv-item">
-                <div class="date">June 2023 - November 2025</div>
-                <div class="title">Postdoctoral Research Fellow</div>
-                <div class="institution">Durham University, Evidence Centre for Education</div>
-                <ul>
-                    <li>ESRC project on ethnic minority teacher recruitment and retention</li>
-                </ul>
-            </div>
-        </section>
+      <!-- Grants & Leadership -->
+      <section class="card">
+        <div class="h2">Research Leadership & Grants</div>
+        <ul>
+          <li><b>Nuffield RDA</b> (Co-lead): Transport, Educational Equity & School Segregation — ABM scenario testing; London & Leeds partners.</li>
+          <li><b>ESRC Responsive Mode</b> (Co-I): Ethnic Variations in Graduate Spatial Mobility — Oxford/Birmingham/Newcastle collaboration.</li>
+        </ul>
+      </section>
 
-        <!-- Teaching Experience -->
-        <section class="cv-section">
-            <h2>Teaching Experience</h2>
-            
-            <div class="cv-item">
-                <div class="date">2023 - Present</div>
-                <div class="title">Module Leader</div>
-                <div class="institution">Durham University</div>
-                <ul>
-                    <li>Secondary Data Analysis in Educational Research (Masters level)</li>
-                    <li>Teaching major datasets: NPD, PISA, TALIS, TIMSS, PIRLS</li>
-                    <li>SPSS and Excel quantitative analysis support</li>
-                </ul>
-            </div>
+      <!-- Publications -->
+      <section class="card">
+        <div class="h2">Selected Publications & Outputs</div>
+        <ul>
+          <li>Gao, Y. (2025). <a href="https://bera-journals.onlinelibrary.wiley.com/doi/full/10.1002/berj.70026" target="_blank" rel="noopener">Multilevel analysis of ethnic clustering across local schools: Exploring group dynamics</a>. <i>British Educational Research Journal</i>.</li>
+          <li>Gao, Y. (2025). <a href="https://onlinelibrary.wiley.com/doi/full/10.1002/psp.70060" target="_blank" rel="noopener">Evolving Patterns of Ethnic Segregation in English Schools: A Decomposition Analysis</a>. <i>Population, Space and Place</i>, 31(5), e70060.</li>
+          <li>Preprint: <a href="https://osf.io/5t27q/" target="_blank" rel="noopener">Understanding Teacher Retention in England: A Multi-Cohort Survival Analysis</a> (2025-08-08).</li>
+          <li>Preprint: <a href="https://osf.io/u4at8/" target="_blank" rel="noopener">Teacher Mobility and Retention Patterns in England (2010–2022)</a> (2025-08-08).</li>
+        </ul>
+      </section>
 
-            <div class="cv-item">
-                <div class="date">2020 - 2022</div>
-                <div class="title">Graduate Teaching Assistant</div>
-                <div class="institution">University of Exeter</div>
-                <ul>
-                    <li>Social Science Data Analysis II & III (R programming)</li>
-                    <li>Statistical methods and data visualization</li>
-                    <li>Git, GitHub, and reproducible research</li>
-                </ul>
-            </div>
-        </section>
+      <!-- Skills -->
+      <section class="card grid-2">
+        <div>
+          <div class="h2">Methods & Software</div>
+          <ul>
+            <li>Multilevel modelling (lme4/MLwiN); MAIHDA (binomial/Poisson; VPC/PCV/MOR/AUC).</li>
+            <li>Causal inference (DiD/RDD/IV; <b>causal forests</b>), formal evaluation.</li>
+            <li>Spatial statistics (CAR; spatial regression); <b>ABM</b> (Python Mesa), simulation studies.</li>
+            <li>R (advanced), Stata, Python; SQL; QGIS/GeoDa; NVivo; <b>Power BI</b> dashboards.</li>
+            <li>Reproducibility: R Markdown pipelines, Git/GitHub, website automation.</li>
+          </ul>
+        </div>
+        <div>
+          <div class="h2">Data Access & Management</div>
+          <ul>
+            <li>ONS SRS: School Workforce Census, NPD; UKDS Secure Lab datasets.</li>
+            <li>Understanding Society; administrative health/RCT archives (ACIC; EEF).</li>
+            <li>Versioned dictionaries; secure governance; documentation for audits.</li>
+          </ul>
+        </div>
+      </section>
 
-        <!-- Skills -->
-        <section class="cv-section">
-            <h2>Technical Skills</h2>
-            
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h4>Programming & Software</h4>
-                    <div class="skill-tags">
-                        <span class="skill-tag">R (Advanced)</span>
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">QGIS</span>
-                        <span class="skill-tag">GeoDa</span>
-                        <span class="skill-tag">MLwiN</span>
-                        <span class="skill-tag">Git/GitHub</span>
-                    </div>
-                </div>
-                
-                <div class="skill-category">
-                    <h4>Statistical Methods</h4>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Multilevel Modeling</span>
-                        <span class="skill-tag">Spatial Analysis</span>
-                        <span class="skill-tag">Decomposition Analysis</span>
-                        <span class="skill-tag">Survival Analysis</span>
-                        <span class="skill-tag">Causal Inference</span>
-                    </div>
-                </div>
-                
-                <div class="skill-category">
-                    <h4>Data Management</h4>
-                    <div class="skill-tags">
-                        <span class="skill-tag">ONS Secure Research</span>
-                        <span class="skill-tag">UK Data Service</span>
-                        <span class="skill-tag">Large Admin Data</span>
-                        <span class="skill-tag">Survey Design</span>
-                    </div>
-                </div>
-                
-                <div class="skill-category">
-                    <h4>Languages</h4>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Mandarin (Native)</span>
-                        <span class="skill-tag">English (Professional)</span>
-                    </div>
-                </div>
-            </div>
-        </section>
+      <!-- Teaching -->
+      <section class="card">
+        <div class="h2">Teaching & Training</div>
+        <ul>
+          <li>Module teaching (Durham): Secondary Data in Education; methods for master’s students.</li>
+          <li>R Bootcamp; Social Science Data Analysis II labs (Exeter); MAIHDA workshops for non-technical audiences.</li>
+        </ul>
+      </section>
 
-        <!-- Professional Service -->
-        <section class="cv-section">
-            <h2>Professional Memberships & Certifications</h2>
-            
-            <ul>
-                <li>ONS Accredited Researcher (2019 - Present)</li>
-                <li>UK Data Service Secure Lab Accredited Researcher (2022 - Present)</li>
-                <li>British Society for Population Studies (BSPS) Member (2022 - Present)</li>
-                <li>Conference Organiser: BSPS 2025 - "Advancing Spatial Microsimulation and Agent-Based Modelling in Population Research"</li>
-            </ul>
-        </section>
+      <!-- Membership -->
+      <section class="card grid-2">
+        <div>
+          <div class="h2">Memberships & Certification</div>
+          <ul>
+            <li>Fellow of the Royal Geographical Society (Population Data Science), No. 99009825 <span class="badge">to Oct 2026</span></li>
+            <li>ONS Accredited Researcher <span class="badge">to Oct 2027</span></li>
+            <li>UK Data Service Secure Lab Accredited Researcher</li>
+            <li>British Society of Population Studies (Full Member)</li>
+          </ul>
+        </div>
+        <div>
+          <div class="h2">Selected Conferences</div>
+          <ul>
+            <li>BSPS Annual Conference (Session Convenor: systems & simulation in population research), 2025.</li>
+            <li>ADR UK Conference (Data linking & methods), 2025.</li>
+            <li>RGS-IBG International Conference (Spatial methods), 2025.</li>
+          </ul>
+        </div>
+      </section>
     </div>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Dr. Yiyang Gao. All rights reserved.</p>
+    <!-- ============ Executive CV ============ -->
+    <div id="cv-executive">
+
+      <!-- Summary -->
+      <section class="card">
+        <div class="h2">Executive Summary</div>
+        <p class="muted">
+          Quantitative leader delivering intersectional <b>public health intelligence</b>, with proven record building multi-institution teams,
+          securing external funding, and translating advanced methods (MAIHDA, causal & spatial ML) into reproducible decision products.
+          Experienced in large secure datasets, evaluation, and capacity-building programmes for non-technical stakeholders.
+        </p>
+        <div class="kpi" style="margin-top:.6rem">
+          <span class="chip">£743k+ proposals led/co-led</span>
+          <span class="chip">10M+ records (SRS)</span>
+          <span class="chip">Cross-sector partners: EEF · ONS · TfL · LAs</span>
+          <span class="chip">Training: 50+ audience events</span>
         </div>
-    </footer>
+      </section>
+
+      <!-- Leadership Highlights -->
+      <section class="card">
+        <div class="h2">Leadership & Impact Highlights</div>
+        <ul>
+          <li><b>Programme leadership</b>: Orchestrated four MAIHDA strands (causal, spatial, Poisson, sample-size guidance) with annual targets; aligned outputs with health-inequality priorities.</li>
+          <li><b>Funding & partnerships</b>: Initiated and led Nuffield RDA (ABM equity in education) and co-led ESRC grant (graduate mobility); recruited senior advisors across Sheffield, Bristol, Loughborough, Oregon, Newcastle, Birmingham, Glasgow.</li>
+          <li><b>Operations & governance</b>: Delivered secure-data pipelines, ethics and access approvals, and documentation for audits; managed competing deadlines across simulation, papers, trainings and grants.</li>
+          <li><b>Translation & capacity</b>: Designed MAIHDA masterclasses and R training; built GitHub-hosted resource hubs and automated reporting; presented to mixed audiences and policymakers.</li>
+          <li><b>Issue response</b>: Diagnosed DfE extract anomalies; coordinated corrected re-issue; implemented resilient cleaning and reporting workflows.</li>
+        </ul>
+      </section>
+
+      <!-- Cross-domain Portfolio -->
+      <section class="card grid-2">
+        <div>
+          <div class="h2">Cross-Domain Portfolio</div>
+          <ul>
+            <li><b>Health inequalities</b>: Intersectional intelligence from Understanding Society & administrative health/RCT datasets (ACIC; EEF access pipeline).</li>
+            <li><b>Education workforce</b>: Teacher retention and progression (multi-cohort survival); national survey & 33 interviews integrated.</li>
+            <li><b>Transport–education equity</b>: ABM scenarios for access improvements; GTFS-based accessibility metrics.</li>
+          </ul>
+        </div>
+        <div>
+          <div class="h2">Decision Tools</div>
+          <ul>
+            <li>Reproducible R Markdown pipelines; <b>maihdaR</b> package.</li>
+            <li>Dashboards: <b>Power BI</b> (+ star-schema) for strategy; web resources for policy briefings.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Skills Stack -->
+      <section class="card grid-2">
+        <div>
+          <div class="h2">Quant & Data Stack</div>
+          <ul>
+            <li>MAIHDA (binomial/Poisson), multilevel models; causal ML (causal forests); spatial CAR.</li>
+            <li>R, Python, SQL; ABM (Mesa); QGIS/GeoDa; NVivo; Power BI.</li>
+            <li>Secure data governance (ONS SRS; UKDS); automated documentation.</li>
+          </ul>
+        </div>
+        <div>
+          <div class="h2">People & Delivery</div>
+          <ul>
+            <li>Stakeholder engagement; multi-partner coordination; session convening.</li>
+            <li>Training & mentoring; non-technical translation; public speaking.</li>
+            <li>Project & risk management; budgeting; audit-ready pipelines.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Selected Outputs -->
+      <section class="card">
+        <div class="h2">Selected Outputs</div>
+        <ul>
+          <li><a href="https://bera-journals.onlinelibrary.wiley.com/doi/full/10.1002/berj.70026" target="_blank" rel="noopener">BERJ (2025)</a> — multilevel ethnic clustering & school dynamics.</li>
+          <li><a href="https://onlinelibrary.wiley.com/doi/full/10.1002/psp.70060" target="_blank" rel="noopener">Population, Space and Place (2025)</a> — decomposition of ethnic segregation trends.</li>
+          <li><a href="https://osf.io/5t27q/" target="_blank" rel="noopener">Teacher Retention (OSF)</a> & <a href="https://osf.io/u4at8/" target="_blank" rel="noopener">Mobility & Retention (OSF)</a> — survival & workforce flows.</li>
+        </ul>
+      </section>
+
+      <!-- Membership & Contact -->
+      <section class="card grid-2">
+        <div>
+          <div class="h2">Memberships</div>
+          <ul>
+            <li>FRGS (Population Data Science) <span class="badge">to Oct 2026</span></li>
+            <li>ONS Accredited Researcher <span class="badge">to Oct 2027</span></li>
+            <li>UKDS Secure Lab Accredited; BSPS Full Member</li>
+          </ul>
+        </div>
+        <div>
+          <div class="h2">Contact & Availability</div>
+          <ul>
+            <li>Email: <a href="mailto:y.gao@sheffield.ac.uk">y.gao@sheffield.ac.uk</a></li>
+            <li>Base: Sheffield · Relocation focus: Edinburgh</li>
+            <li>Visa: Skilled Worker (to 20 Nov 2027); ILR planned Jul 2026</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+
+    <p class="note">Tip: Use the buttons above to switch CV views. Click “Download PDF” for a clean, print-friendly export.</p>
+  </main>
+
+  <!-- Shared footer -->
+  <div data-include="footer"></div>
+
+  <script>
+    // Toggle CV views
+    const btnA = document.getElementById('btn-academic');
+    const btnE = document.getElementById('btn-executive');
+    const cvA = document.getElementById('cv-academic');
+    const cvE = document.getElementById('cv-executive');
+    function setView(which){
+      const isA = which === 'A';
+      cvA.classList.toggle('active', isA);
+      cvE.classList.toggle('active', !isA);
+      btnA.classList.toggle('active', isA);
+      btnE.classList.toggle('active', !isA);
+      btnA.setAttribute('aria-pressed', String(isA));
+      btnE.setAttribute('aria-pressed', String(!isA));
+    }
+    btnA.addEventListener('click',()=>setView('A'));
+    btnE.addEventListener('click',()=>setView('E'));
+
+    // Print buttons
+    const btnPrint = document.getElementById('btn-print');
+    btnPrint.addEventListener('click', () => {
+      window.print();
+    });
+
+    // Print-friendly preview (toggle pure white styling on screen)
+    const btnPreview = document.getElementById('btn-preview');
+    let previewOn = false;
+    btnPreview.addEventListener('click', () => {
+      previewOn = !previewOn;
+      document.documentElement.classList.toggle('print-clean', previewOn);
+      btnPreview.textContent = previewOn ? '👁️ Exit preview' : '👁️ Print-friendly preview';
+    });
+  </script>
+
+  <!-- Include script -->
+  <script src="/include.js"></script>
 </body>
 </html>
