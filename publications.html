@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Publications | Dr. Yiyang Gao</title>
-  <link rel="stylesheet" href="style.css">
   <style>
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -28,42 +27,17 @@
       box-shadow: 0 4px 20px rgba(0,0,0,0.1);
       padding: 2rem 3rem;
     }
-    .publication {
-      border-bottom: 1px solid #eee;
-      padding: 1.5rem 0;
-    }
-    .publication:last-child {
-      border-bottom: none;
-    }
-    .publication h3 {
-      color: #2c3e50;
-      margin-bottom: 0.5rem;
-    }
-    .publication a {
-      color: #3498db;
-      text-decoration: none;
-    }
-    .publication a:hover {
-      text-decoration: underline;
-    }
-    .authors {
-      color: #555;
-      margin-bottom: 0.3rem;
-    }
-    .journal {
-      color: #666;
-      font-style: italic;
-    }
-    footer {
-      text-align: center;
-      padding: 2rem;
-      color: #666;
-      font-size: 0.9rem;
-    }
+    .publication { border-bottom: 1px solid #eee; padding: 1.5rem 0; }
+    .publication:last-child { border-bottom: none; }
+    .publication h3 { color: #2c3e50; margin-bottom: 0.5rem; }
+    .publication a { color: #3498db; text-decoration: none; }
+    .publication a:hover { text-decoration: underline; }
+    .authors { color: #555; margin-bottom: 0.3rem; }
+    .journal { color: #666; font-style: italic; }
   </style>
 </head>
 <body>
-  <!-- Reusable Header -->
+  <!-- Shared header -->
   <div data-include="header"></div>
 
   <h1>Publications</h1>
@@ -121,11 +95,8 @@
 
   </div>
 
-  <footer>
-      <div data-include="footer"></div>
-      <script src="/include.js"></script>
-  </footer>
-
+  <!-- Shared footer -->
+  <div data-include="footer"></div>
   <script src="/include.js"></script>
 </body>
 </html>
