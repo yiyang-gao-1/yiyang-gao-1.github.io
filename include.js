@@ -1,36 +1,69 @@
 <!-- include.js -->
 <script>
-  async function include(selector, file) {
-    const host = document.querySelector(selector);
-    if (!host) return;
-    try {
-      const res = await fetch(file, { cache: "no-store" });
-      host.innerHTML = await res.text();
-      if (selector === '[data-include="header"]') activateNav(); // 
-    } catch (e) {
-      console.error("Include failed:", file, e);
-    }
+(async function () {
+  // Inject header/footer
+  async function inject(sel, file){
+    const host = document.querySelector(sel);
+    if(!host) return;
+    const res = await fetch(file, {cache: 'no-store'});
+    host.innerHTML = await res.text();
   }
+  await inject('[data-include="header"]', '/header.html');
+  await inject('[data-include="footer"]', '/footer.html');
 
-  function activateNav() {
-    const links = document.querySelectorAll('nav .nav-links a');
-    const path = location.pathname.replace(/index\.html$/, '/'); // see /index.html as /
-    const current = (path === '/' ? '/index.html' : path);
+  // After header is in the DOM:
+  activateNav();
+  enableSmoothScroll();
+  jumpIfHasHash();
 
-    links.forEach(a => {
+  // Highlight current tab
+  function activateNav(){
+    const aList = document.querySelectorAll('nav .nav-links a');
+    // Treat /index.html and / as the same
+    const path = location.pathname.replace(/\/$/, '/index.html');
+    aList.forEach(a => {
       const href = a.getAttribute('href');
-      // only compare paths (ignore #hash）
-      const cleanHref = (href || '').split('#')[0] || '/';
-      if (cleanHref === current) a.classList.add('active');
-      // 
-      if ((current === '/index.html' || current === '/') && href.startsWith('/index.html#')) {
+      const hrefPath = (href || '').split('#')[0] || '';
+      if (!hrefPath) return;
+
+      // Exact page matches (cv.html, portfolio.html, research.html, publications.html)
+      if (hrefPath === path) a.classList.add('active');
+
+      // When we are on index and an anchor is present, allow About/Research/etc. to be active
+      if ((path === '/index.html') && href.startsWith('/index.html#')) {
         if (location.hash && href.endsWith(location.hash)) a.classList.add('active');
       }
     });
   }
 
-  (async () => {
-    await include('[data-include="header"]', '/header.html');
-    await include('[data-include="footer"]', '/footer.html');
-  })();
+  // Smooth-scrolling when already on the homepage
+  function enableSmoothScroll(){
+    document.addEventListener('click', (e) => {
+      const a = e.target.closest('a[href^="/index.html#"]');
+      if (!a) return;
+
+      const id = a.getAttribute('href').split('#')[1];
+      const onHome = (location.pathname === '/' || location.pathname === '/index.html');
+      const target = document.getElementById(id);
+
+      if (onHome && target){
+        e.preventDefault();
+        target.scrollIntoView({behavior:'smooth'});
+        history.replaceState(null, '', '/index.html#' + id);
+        // update active state
+        document.querySelectorAll('nav .nav-links a').forEach(x => x.classList.remove('active'));
+        a.classList.add('active');
+      }
+    });
+  }
+
+  // If lands with a hash from another page, jump to section
+  function jumpIfHasHash(){
+    if (location.hash){
+      const id = location.hash.slice(1);
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({behavior:'instant'});
+    }
+  }
+})();
 </script>

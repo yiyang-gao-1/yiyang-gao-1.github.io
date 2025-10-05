@@ -81,7 +81,6 @@
       .card{box-shadow:none;border:1px solid #e5e5e5;page-break-inside:avoid}
       .h2{color:#000}
       a{color:#000;text-decoration:underline}
-      /* 仅打印当前激活的 CV（Academic 或 Executive） */
       #cv-academic:not(.active), #cv-executive:not(.active){display:none !important}
     }
 
@@ -360,7 +359,7 @@
     <p class="note">Tip: Use the buttons above to switch CV views. Click “Download PDF” for a clean, print-friendly export.</p>
   </main>
 
-  <!-- Shared footer -->
+    <!-- Shared footer -->
   <div data-include="footer"></div>
 
   <script>
@@ -383,11 +382,9 @@
 
     // Print buttons
     const btnPrint = document.getElementById('btn-print');
-    btnPrint.addEventListener('click', () => {
-      window.print();
-    });
+    btnPrint.addEventListener('click', () => window.print());
 
-    // Print-friendly preview (toggle pure white styling on screen)
+    // Print-friendly preview
     const btnPreview = document.getElementById('btn-preview');
     let previewOn = false;
     btnPreview.addEventListener('click', () => {
@@ -399,5 +396,8 @@
 
   <!-- Include script -->
   <script src="/include.js"></script>
+</body>
+</html>
+
 </body>
 </html>
