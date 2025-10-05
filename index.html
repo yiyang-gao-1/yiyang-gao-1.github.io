@@ -2,126 +2,113 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Dr. Yiyang Gao | Computational Social Scientist</title>
   <style>
-    * {margin: 0; padding: 0; box-sizing: border-box;}
-    :root {
-      --primary: #2c3e50;
-      --secondary: #660099; /* Sheffield purple */
-      --accent: #FFCC33;    /* Sheffield gold */
-      --text: #333;
-      --light-bg: #f8f9fa;
-      --white: #fff;
+    * { margin:0; padding:0; box-sizing:border-box; }
+
+    :root{
+      --primary:#2c3e50;
+      --secondary:#660099; /* Sheffield purple */
+      --accent:#FFCC33;    /* Sheffield gold */
+      --text:#333;
+      --light-bg:#f8f9fa;
+      --white:#fff;
     }
-    body {
-      font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;
-      line-height: 1.6;
-      color: var(--text);
-      background: var(--white);
+
+    body{
+      font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
+      line-height:1.6;
+      color:var(--text);
+      background:var(--white);
     }
 
     /* Hero */
-    .hero {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      text-align: center;
-      padding: 4rem 2rem;
+    .hero{
+      background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);
+      color:#fff; padding:4rem 2rem; text-align:center;
     }
-    .hero h1 {font-size: 3rem; margin-bottom: 1rem;}
-    .hero .subtitle {font-size: 1.5rem; margin-bottom: 1rem; opacity: 0.9;}
-    .hero .tagline {font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.8;}
-    .contact-buttons {display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;}
-    .btn {
-      display:inline-block; padding:.75rem 1.5rem; background:var(--white);
-      color:var(--primary); text-decoration:none; border-radius:5px;
-      transition:transform .3s, box-shadow .3s;
-    }
-    .btn:hover {transform:translateY(-2px); box-shadow:0 4px 8px rgba(0,0,0,0.2);}
+    .hero h1{ font-size:3rem; margin-bottom:1rem; }
+    .hero .subtitle{ font-size:1.5rem; margin-bottom:1rem; opacity:.9; }
+    .hero .tagline{ font-size:1.1rem; margin-bottom:2rem; opacity:.85; }
+    .contact-buttons{ display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; }
+    .btn{ display:inline-block; padding:.75rem 1.5rem; background:var(--white); color:var(--primary);
+      text-decoration:none; border-radius:6px; transition:transform .25s, box-shadow .25s; }
+    .btn:hover{ transform:translateY(-2px); box-shadow:0 6px 18px rgba(0,0,0,.15); }
 
-    section {padding:4rem 2rem;}
-    .container {max-width:1200px; margin:0 auto;}
-    h2 {
-      font-size:2.3rem; margin-bottom:2rem;
-      color:var(--secondary); text-align:center;
-    }
+    /* Sections */
+    section{ padding:4rem 2rem; }
+    .container{ max-width:1200px; margin:0 auto; }
+    h2{ font-size:2.5rem; margin-bottom:2rem; color:var(--secondary); text-align:center; }
 
     /* About */
-    .about-content {
-      display:grid; grid-template-columns:1fr 2fr; gap:3rem; align-items:start;
+    .about-content{ display:grid; grid-template-columns:1fr 2fr; gap:3rem; align-items:start; }
+    .profile-img{
+      width:100%; max-width:300px; border-radius:10px; box-shadow:0 4px 20px rgba(0,0,0,.1);
     }
-    .profile-img {
-      width:100%; max-width:300px; border-radius:10px;
-      box-shadow:0 4px 20px rgba(0,0,0,0.1);
-    }
-    .bio p {margin-bottom:1rem; text-align:justify;}
+    .bio p{ margin-bottom:1rem; text-align:justify; }
 
-    /* Research */
-    .research-areas {
-      display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    /* Research cards */
+    .research-areas{
+      display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));
       gap:2rem; margin-bottom:3rem;
     }
-    .research-card {
+    .research-card{
       background:var(--white); padding:2rem; border-radius:10px;
-      box-shadow:0 4px 20px rgba(0,0,0,0.1); transition:transform .3s;
+      box-shadow:0 4px 20px rgba(0,0,0,.1); transition:transform .25s;
     }
-    .research-card:hover {transform:translateY(-5px);}
-    .research-card h3 {color:var(--secondary); margin-bottom:1rem;}
+    .research-card:hover{ transform:translateY(-4px); }
+    .research-card h3{ color:var(--secondary); margin-bottom:1rem; }
 
     /* Publications */
-    .publication-list {
-      background:var(--white); padding:2rem; border-radius:10px;
-      box-shadow:0 4px 20px rgba(0,0,0,0.1);
+    .publication-list{
+      background:var(--white); padding:2rem; border-radius:10px; box-shadow:0 4px 20px rgba(0,0,0,.1);
     }
-    .publication {padding:1.5rem 0; border-bottom:1px solid #eee;}
-    .publication:last-child {border-bottom:none;}
-    .publication h4 {color:var(--primary); margin-bottom:0.5rem;}
-    .publication a {color:var(--primary); text-decoration:none;}
-    .publication a:hover {color:var(--secondary); text-decoration:underline;}
-    .publication .authors {color:#666; margin-bottom:0.5rem;}
-    .publication .journal {color:var(--secondary); font-style:italic;}
+    .publication{ padding:1.25rem 0; border-bottom:1px solid #eee; }
+    .publication:last-child{ border-bottom:none; }
+    .publication h4{ color:var(--primary); margin-bottom:.35rem; }
+    .publication a{ color:var(--primary); text-decoration:none; }
+    .publication a:hover{ color:var(--secondary); text-decoration:underline; }
+    .publication .authors{ color:#666; margin-bottom:.4rem; }
+    .publication .journal{ color:var(--secondary); font-style:italic; }
 
-    /* Experience */
-    .timeline {position:relative; padding:2rem 0;}
-    .timeline::before {
+    /* Timeline experience */
+    .timeline{ position:relative; padding:2rem 0; }
+    .timeline::before{
       content:''; position:absolute; left:50%; top:0; bottom:0; width:2px;
       background:var(--secondary); transform:translateX(-50%);
     }
-    .timeline-item {
-      position:relative; padding:2rem; margin-bottom:2rem;
-      background:var(--white); border-radius:10px;
-      box-shadow:0 4px 20px rgba(0,0,0,0.1);
+    .timeline-item{
+      position:relative; padding:2rem; margin-bottom:2rem; background:var(--white);
+      border-radius:10px; box-shadow:0 4px 20px rgba(0,0,0,.1);
       width:calc(50% - 30px);
     }
-    .timeline-item:nth-child(odd){margin-left:auto;}
-    .timeline-item::before {
-      content:''; position:absolute; width:20px; height:20px;
-      background:var(--secondary); border-radius:50%; top:30px;
+    .timeline-item:nth-child(odd){ margin-left:auto; }
+    .timeline-item::before{
+      content:''; position:absolute; width:18px; height:18px; background:var(--secondary);
+      border-radius:50%; top:28px;
     }
-    .timeline-item:nth-child(odd)::before {left:-40px;}
-    .timeline-item:nth-child(even)::before {right:-40px;}
+    .timeline-item:nth-child(odd)::before{ left:-38px; }
+    .timeline-item:nth-child(even)::before{ right:-38px; }
 
-    footer {
-      background:var(--primary); color:white; text-align:center; padding:2rem;
-    }
-
-    /* Smooth scroll highlight */
-    .nav-links a.active {
-      color:var(--secondary); font-weight:600;
-      border-bottom:2px solid var(--secondary);
+    /* Footer injected via footer.html */
+    .nav-links a.active{
+      color:var(--secondary); font-weight:600; border-bottom:2px solid var(--secondary);
     }
 
-    @media(max-width:768px){
-      .about-content{grid-template-columns:1fr; text-align:center;}
-      .timeline::before{left:30px;}
-      .timeline-item{width:calc(100% - 60px); margin-left:60px!important;}
-      .timeline-item::before{left:-40px!important;}
+    @media (max-width: 900px){
+      .about-content{ grid-template-columns:1fr; text-align:center; }
+    }
+    @media (max-width: 768px){
+      .timeline::before{ left:30px; }
+      .timeline-item{ width:calc(100% - 60px); margin-left:60px !important; }
+      .timeline-item::before{ left:-38px !important; }
     }
   </style>
 </head>
-
 <body>
-  <!-- Shared header -->
+
+  <!-- Shared header (must contain /index.html#about etc.) -->
   <div data-include="header"></div>
 
   <!-- Hero -->
@@ -141,23 +128,33 @@
   </header>
 
   <!-- About -->
-  <section id="about">
+  <section id="about" class="about">
     <div class="container">
       <h2>About Me</h2>
       <div class="about-content">
         <div>
-          <img src="profile.jpeg" alt="Dr. Yiyang Gao" class="profile-img" />
+          <img src="profile.jpeg" alt="Dr. Yiyang Gao" class="profile-img">
         </div>
         <div class="bio">
           <p>
-            I am a Research Associate in Quantitative Social Science at the University of Sheffield’s Methods Institute.
+            I am now working as the Quantitative Social Science Research Associate at the University of Sheffield's
+            Methods Institute.
           </p>
           <p>
-            My research explores how spatial inequalities create cascading disadvantages across education, transport, and health. 
-            I focus on computational and statistical methods — especially MAIHDA (Multilevel Analysis of Individual Heterogeneity and Discriminatory Accuracy) — to study intersectional inequalities.
+            My research journey began with studying educational segregation during my PhD at the University
+            of Exeter (2018-2023), where I developed novel multi-group, multi-scale analytical frameworks.
+            This work revealed how spatial inequalities create cascading disadvantages across education,
+            transport, and health domains.
           </p>
           <p>
-            <strong>Research Interests:</strong> Spatial Inequalities · Computational Social Science · Health Geography · Intersectionality · Quantitative Methods
+            I am now pivoting toward computational health geography, focusing on using advanced quantitative
+            methods and AI/ML to understand and address spatial health inequalities. My current work explores
+            the intersection of ethnicity, space, and social outcomes through innovative applications of
+            MAIHDA (Multilevel Analysis of Individual Heterogeneity and Discriminatory Accuracy).
+          </p>
+          <p>
+            <strong>Research Interests:</strong> Spatial Inequalities, Computational Social Science,
+            Health Geography, Intersectionality, Advanced Quantitative Methods, Population Geography
           </p>
         </div>
       </div>
@@ -171,16 +168,50 @@
       <div class="research-areas">
         <div class="research-card">
           <h3>Educational Segregation</h3>
-          <p>20-year analysis of ethnic school segregation patterns in England using multi-group, multi-scale decomposition methods.</p>
+          <p>
+            20-year analysis of ethnic school segregation patterns in England, developing novel
+            multi-scale decomposition methods to understand how residential and school segregation interact.
+          </p>
+          <ul>
+            <li>Multilevel modeling of clustering patterns</li>
+            <li>Spatial analysis of school choice</li>
+            <li>Teacher retention disparities</li>
+          </ul>
         </div>
         <div class="research-card">
           <h3>Spatial Accessibility</h3>
-          <p>Examining how transport infrastructure shapes educational equity and social mobility using agent-based modelling and accessibility mapping.</p>
+          <p>
+            Examining how transport infrastructure shapes educational equity and social mobility,
+            with focus on multimodal accessibility analysis and policy simulation.
+          </p>
+          <ul>
+            <li>School accessibility mapping</li>
+            <li>Transport inequality measurement</li>
+            <li>Agent-based modeling</li>
+          </ul>
         </div>
         <div class="research-card">
           <h3>Computational Health Geography</h3>
-          <p>Developing MAIHDA extensions — Causal-MAIHDA, Spatial-MAIHDA, ML-MAIHDA — to understand how place, identity, and health intersect.</p>
+          <p>
+            Developing innovative applications of MAIHDA for understanding how place, identity,
+            and health intersect, with focus on methodological advancement.
+          </p>
+          <ul>
+            <li>Spatial-MAIHDA development</li>
+            <li>ML-enhanced intersectionality</li>
+            <li>Environmental health equity</li>
+          </ul>
         </div>
+      </div>
+
+      <div style="margin-top:3rem; padding:2rem; background:#fff3cd; border-radius:10px;">
+        <h3 style="color:#856404; margin-bottom:1rem;">Current Focus: MAIHDA Innovation</h3>
+        <p>
+          I am developing cutting-edge extensions of MAIHDA methodology, including Causal-MAIHDA
+          (combining with DID, RDD, IV), ML-MAIHDA (feature discovery), Spatial-MAIHDA (geographic
+          random effects), and LLM-MAIHDA (narrative generation). This work aims to move intersectionality
+          research from description to causation and prediction.
+        </p>
       </div>
     </div>
   </section>
@@ -191,18 +222,28 @@
       <h2>Selected Publications</h2>
       <div class="publication-list">
         <div class="publication">
-          <h4><a href="https://bera-journals.onlinelibrary.wiley.com/doi/full/10.1002/berj.70026" target="_blank">Multilevel analysis of ethnic clustering across local schools</a></h4>
-          <p class="authors"><strong>Gao, Y.</strong> (2025)</p>
-          <p class="journal"><em>British Educational Research Journal</em></p>
+          <h4>
+            <a href="https://bera-journals.onlinelibrary.wiley.com/doi/full/10.1002/berj.70026" target="_blank" rel="noopener">
+              Multilevel analysis of ethnic clustering across local schools: Exploring group dynamics
+            </a>
+          </h4>
+          <p class="authors"><strong>Gao, Y.</strong> (2025).</p>
+          <p class="journal"><em>British Educational Research Journal</em>.</p>
         </div>
+
         <div class="publication">
-          <h4><a href="https://onlinelibrary.wiley.com/doi/full/10.1002/psp.70060" target="_blank">Evolving Patterns of Ethnic Segregation in English Schools</a></h4>
-          <p class="authors"><strong>Gao, Y.</strong> (2025)</p>
-          <p class="journal"><em>Population, Space and Place</em>, 31(5), e70060</p>
+          <h4>
+            <a href="https://onlinelibrary.wiley.com/doi/full/10.1002/psp.70060" target="_blank" rel="noopener">
+              Evolving Patterns of Ethnic Segregation in English Schools: A Decomposition Analysis
+            </a>
+          </h4>
+          <p class="authors"><strong>Gao, Y.</strong> (2025).</p>
+          <p class="journal"><em>Population, Space and Place</em>, 31(5), e70060.</p>
         </div>
       </div>
-      <p style="text-align:center;margin-top:2rem;">
-        <a href="/publications.html" class="btn" style="background:var(--secondary);color:white;">View All Publications</a>
+
+      <p style="text-align:center; margin-top:2rem;">
+        <a href="/publications.html" class="btn" style="background:var(--secondary); color:#fff;">View All Publications</a>
       </p>
     </div>
   </section>
@@ -214,15 +255,18 @@
       <div class="timeline">
         <div class="timeline-item">
           <h3>2025–2026: Research Fellow</h3>
-          <p><strong>University of Sheffield</strong> — MAIHDA methodological development</p>
+          <p><strong>University of Sheffield, Sheffield Methods Institute</strong></p>
+          <p>Quantitative Social Science Researcher focusing on MAIHDA methodological development</p>
         </div>
         <div class="timeline-item">
           <h3>2023–2025: Postdoctoral Fellow</h3>
-          <p><strong>Durham University</strong> — Teacher workforce diversity and retention</p>
+          <p><strong>Durham University, Evidence Centre for Education</strong></p>
+          <p>ESRC-funded project on ethnic minority teacher recruitment and retention</p>
         </div>
         <div class="timeline-item">
-          <h3>2018–2023: PhD, Advanced Quantitative Methods</h3>
-          <p><strong>University of Exeter</strong> — Ethnic School Segregation in England</p>
+          <h3>2018–2023: PhD in Advanced Quantitative Methods</h3>
+          <p><strong>University of Exeter, Centre for Computational Social Science</strong></p>
+          <p>Thesis: Ethnic School Segregation in England</p>
         </div>
       </div>
     </div>
@@ -239,6 +283,18 @@
             <li>R and Python Programming</li>
             <li>Social Statistics (all levels)</li>
             <li>Multilevel Modeling</li>
+            <li>Spatial Analysis &amp; GIS</li>
+            <li>Survey Methods</li>
+          </ul>
+        </div>
+        <div class="research-card">
+          <h3>Core Courses</h3>
+          <ul>
+            <li>Introduction to Sociology</li>
+            <li>Sociology of Education</li>
+            <li>Urban Sociology &amp; Spatial Analysis</li>
+            <li>Migration Studies</li>
+            <li>Applied Social Data Science</li>
           </ul>
         </div>
         <div class="research-card">
@@ -246,6 +302,8 @@
           <ul>
             <li>Secondary Data Analysis</li>
             <li>Longitudinal Data Analysis</li>
+            <li>Mixed Methods Research</li>
+            <li>Systematic Reviews</li>
             <li>Reproducible Research with R</li>
           </ul>
         </div>
@@ -257,14 +315,20 @@
   <section id="contact" style="background:var(--light-bg);">
     <div class="container">
       <h2>Get in Touch</h2>
-      <div style="text-align:center;">
-        <p style="font-size:1.1rem;margin-bottom:1.5rem;">
-          I'm always open to collaborations on spatial inequalities, computational methods, and health geography research.
+    <div style="text-align:center;">
+        <p style="font-size:1.2rem; margin-bottom:2rem;">
+          I'm always interested in collaborations on spatial inequalities, computational methods,
+          and health geography research.
         </p>
         <div class="contact-buttons">
-          <a href="mailto:y.gao@sheffield.ac.uk" class="btn" style="background:var(--secondary);color:white;">📧 Email Me</a>
-          <a href="https://intersectionalhealth.org/the-team/" class="btn" style="background:var(--primary);color:white;">🏫 Sheffield Profile</a>
+          <a href="mailto:y.gao@sheffield.ac.uk" class="btn" style="background:var(--secondary); color:#fff;">📧 Email Me</a>
+          <a href="https://intersectionalhealth.org/the-team/" class="btn" style="background:var(--primary); color:#fff;">🏫 Sheffield Profile</a>
         </div>
+        <p style="margin-top:2rem;">
+          <strong>Current Address:</strong><br>
+          Sheffield Methods Institute<br>
+          University of Sheffield, UK
+        </p>
       </div>
     </div>
   </section>
@@ -272,23 +336,38 @@
   <!-- Shared footer -->
   <div data-include="footer"></div>
 
-  <!-- Smooth scroll for internal anchors -->
+  <!-- Make nav tabs work everywhere + smooth scroll -->
   <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    document.querySelectorAll('a[href^="/index.html#"]').forEach(anchor => {
-      anchor.addEventListener("click", function(e) {
-        const id = this.getAttribute("href").split("#")[1];
-        const target = document.getElementById(id);
-        if (target && (location.pathname === "/" || location.pathname.endsWith("index.html"))) {
-          e.preventDefault();
-          target.scrollIntoView({ behavior: "smooth" });
-        }
-      });
+    // Smooth scroll only when already on /index.html
+    function smoothScrollOnSamePage(e, href){
+      const id = href.split('#')[1];
+      const target = document.getElementById(id);
+      const onHome = (location.pathname === '/' || location.pathname.endsWith('/index.html'));
+      if (target && onHome){
+        e.preventDefault();
+        target.scrollIntoView({behavior:'smooth'});
+        history.replaceState(null, '', '/index.html#' + id);
+      }
+    }
+
+    // Handle clicks on header links when on index
+    document.addEventListener('click', function(e){
+      const a = e.target.closest('a[href^="/index.html#"]');
+      if (!a) return;
+      smoothScrollOnSamePage(e, a.getAttribute('href'));
     });
-  });
+
+    // If landing with a hash from another page, scroll to it after load
+    window.addEventListener('load', function(){
+      if (location.hash){
+        const id = location.hash.slice(1);
+        const el = document.getElementById(id);
+        if (el){ el.scrollIntoView({behavior:'instant'}); }
+      }
+    });
   </script>
 
-  <!-- Include script -->
+  <!-- Include header/footer injection -->
   <script src="/include.js"></script>
 </body>
 </html>
